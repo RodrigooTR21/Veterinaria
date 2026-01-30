@@ -1,0 +1,38 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Virtual environment
+venv/
+env/
+.env
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Testing
+coverage/
+.tox/
+
+# Misc
+*.bak
+*.tmp
+*.old

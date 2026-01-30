@@ -1,0 +1,43 @@
+{% extends "WebApp/estructura.html" %}
+
+{% block content %}
+
+    {# Itera sobre los objetos 'servicios' que la vista envía #}
+    {% for post in posts %}
+    <section class="page-section clearfix">
+    {# ELIMINADA: La línea <link href="/static/WebApp/css/gestion.css?v=5.0" rel="stylesheet"> ya que pertenece a la plantilla base. #}
+        <div class="container">
+            <div class="intro">
+
+                <div class="product-item-img"> 
+                    {% if post.imagen %}
+                    <img class="intro-img img-fluid mb-1 mb-lg-0 rounded" src="{{ post.imagen.url }}"  alt="" style="width: 55%; height: 45%;">
+                    {% endif %}
+                </div>
+                
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">{{ post.titulo }}</span>
+                        <span class="section-heading-upper">{{ post.contenido }}</span>
+                    </h2>
+                    <div style="text-align: left; font-size: 1rem;">
+                        Autor: {{ post.autor }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% empty %}
+    <p>No hay servicios disponibles.</p>
+    {% endfor %}
+    <section>
+        <div style="width: 75%; background-color: rgb(255, 255, 255); margin: auto; text-align: center; color: rgb(0, 0, 0);">
+            Categoria:
+            {# Mostrar sólo la categoría actual como enlace con su id #}
+            <a href="{% url 'categorias' categoria.id %}" style="text-decoration: none; color: inherit;">
+                <span style="color: rgb(4, 4, 4); font-size: 1rem; margin-right: 10px;">{{ categoria.nombre }}</span>
+            </a>
+        </div>
+    </section>
+
+{% endblock %}

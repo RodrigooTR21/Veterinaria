@@ -1,0 +1,31 @@
+{% extends "WebApp/estructura.html" %}
+
+{% block content %}
+
+    {# Itera sobre los objetos 'servicios' que la vista envía #}
+    {% for servicio in servicios %}
+    <section class="page-section clearfix">
+    {# ELIMINADA: La línea <link href="/static/WebApp/css/gestion.css?v=5.0" rel="stylesheet"> ya que pertenece a la plantilla base. #}
+        <div class="container">
+            <div class="intro">
+                
+                {# AÑADIDA CLASE DE HOVER: Agregamos una clase para que la animación funcione correctamente. #}
+                <div class="product-item-img"> 
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ servicio.imagen.url }}" alt="Perro y gato felices">
+                </div>
+                
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">{{ servicio.titulo }}</span>
+                        <span class="section-heading-upper">{{ servicio.contenido }}</span>
+                    </h2>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    {% empty %}
+    <p>No hay servicios disponibles.</p>
+    {% endfor %}
+
+{% endblock %}
