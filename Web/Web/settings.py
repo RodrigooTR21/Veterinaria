@@ -29,8 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-yivv4!ctzya9bvwe3h#@83-5hf%f0%@nd+k#w6%brf^wv78j8z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+DEBUG = False
 
+# Allow all hosts for Render
 ALLOWED_HOSTS = ['*']
 
 
@@ -164,7 +165,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'tapiar349@gmail.com'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_HOST_PASSWORD = 'pngx ujko lnea rmim'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
