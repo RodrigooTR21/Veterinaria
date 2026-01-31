@@ -148,13 +148,25 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = []
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# Configuración para WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+WHITENOISE_ROOT = STATIC_ROOT
 
 # Configuración para buscar archivos estáticos en las aplicaciones
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+# Configuración específica para producción
+if not DEBUG:
+    # Asegurar que WhiteNoise esté sirviendo archivos estáticos
+    import dj_database_url
+    
+    # Configurar WhiteNoise para manejar archivos estáticos
+    WHITENOISE_MAX_AGE = 31536000  # Cache de 1 año para archivos estáticos
+    WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
