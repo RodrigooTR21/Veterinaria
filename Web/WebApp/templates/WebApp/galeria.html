@@ -1,0 +1,29 @@
+{% extends "WebApp/estructura.html" %}
+{% load static %}
+
+{% block content %}
+<section class="page-section">
+  <div class="container">
+    <h1 class="mb-4">Galería de pacientes felices</h1>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="{% static 'WebApp/img/Fondo.png' %}" alt="animal a">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="{% static 'WebApp/img/Fondo2.png' %}" alt="animal b">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="/media/servicios/alaska.jpg" alt="animal c">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="/media/servicios/pastor_aleman.jpg" alt="animal d">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="/media/servicios/golden1.jpg" alt="animal e">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img class="img-fluid rounded shadow-sm" src="/media/blog/husky.jpg" alt="animal f">
+      </div>
+    </div>
+  </div>
+{% endblock %}

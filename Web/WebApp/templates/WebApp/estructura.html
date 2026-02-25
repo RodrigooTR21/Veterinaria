@@ -1,7 +1,10 @@
-<html>
+<html lang="es">
 
 <head>
     {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mascotas Felices y Sanas</title>
     <link href="{% static 'WebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
@@ -13,46 +16,29 @@
 
 <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-
-        <span class="site-heading-lower">Mascotas Felices y Sanas</span>
-    </h1>
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'Home' %}">Mascotas Felices y Sanas</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
-                    </li>
-                    <li class="nav-item {% if request.path == '/servicios/' %} active {% endif %} px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Perros y Gatos</a>
-                    </li>
-                    <li class="nav-item {% if request.path == '/tienda/' %} active {% endif %} px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'Tienda' %}">Otras Mascotas</a>
-                    </li>
-                    <li class="nav-item {% if request.path == '/contacto/' %} active {% endif %} px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
-                    </li>
-                    <li class="nav-item {% if request.path|slice:'6' == '/blog/' %} active {% endif %} px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog & Guías</a>
-                    </li>
-
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="{% url 'Home' %}">Mascotas Felices y Sanas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'Home' %}">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/servicios/' %}active{% endif %}" href="{% url 'Servicios' %}">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/tienda/' %}active{% endif %}" href="{% url 'Tienda' %}">Productos</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/galeria/' %}active{% endif %}" href="{% url 'Galeria' %}">Galería</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path == '/contacto/' %}active{% endif %}" href="{% url 'Contacto' %}">Agendar cita</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.path|slice:'6' == '/blog/' %}active{% endif %}" href="{% url 'Blog' %}">Blog</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     {% block content %}
     {% endblock %}
 
-
-    <footer class="footer text-faded text-center py-5">
+    <footer class="footer text-faded text-center py-5 mt-5">
         <div class="container">
             <p class="m-0">
                 <a href="#" class="link">

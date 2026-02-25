@@ -3,39 +3,96 @@
 
 {% block content %}
 
-
-    <section class="page-section clearfix">
-        <div class="container">
-            <div class="intro">
-                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'WebApp/img/mascotas.png' %}" alt="Perro y gato felices">
-                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-                    <h2 class="section-heading mb-4">
-                        <span class="section-heading-upper">Calidad y Confianza</span>
-                        <span class="section-heading-lower">Todo para tu Mejor Amigo</span>
-                    </h2>
-                    <p class="mb-3">Encuentra la mejor nutrición, juguetes y accesorios para perros, gatos, aves y pequeños mamíferos. ¡Envío rápido a domicilio para que nunca les falte nada!</p>
-
-                </div>
+    <header class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold mb-3">Cuidamos a tu mascota con amor</h1>
+            <p class="lead">Servicios veterinarios, productos esenciales y una galería con las mejores fotos de nuestros pacientes felices.</p>
+            <div class="d-flex gap-3">
+              <a class="btn btn-primary btn-lg" href="{% url 'Contacto' %}">Agendar cita</a>
+              <a class="btn btn-outline-primary btn-lg" href="{% url 'Servicios' %}">Ver servicios</a>
             </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img class="img-fluid rounded" src="{% static 'WebApp/img/mascotas.png' %}" alt="Perro y gato felices" />
+          </div>
         </div>
+      </div>
+    </header>
+
+    <section class="page-section">
+      <div class="container">
+        <h2 class="mb-4">Servicios destacados</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Consulta general</h5>
+                <p class="card-text">Revisión completa para mantener a tu peludo sano.</p>
+                <a href="{% url 'Servicios' %}" class="btn btn-sm btn-primary">Más info</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Vacunación</h5>
+                <p class="card-text">Esquemas completos y recordatorios.</p>
+                <a href="{% url 'Servicios' %}" class="btn btn-sm btn-primary">Más info</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Estética</h5>
+                <p class="card-text">Baño, corte y spa para consentirlos.</p>
+                <a href="{% url 'Servicios' %}" class="btn btn-sm btn-primary">Más info</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Laboratorio</h5>
+                <p class="card-text">Análisis y resultados rápidos.</p>
+                <a href="{% url 'Servicios' %}" class="btn btn-sm btn-primary">Más info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
     <section class="page-section cta">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Nuestra Dedicación Animal</span>
-                            <span class="section-heading-lower">Amor y Cuidado Garantizado</span>
-                        </h2>
-                        <p class="mb-0">Con años de experiencia y un profundo amor por los animales, en **Mascotas Felices y Sanas** seleccionamos productos de la más alta calidad y ofrecemos asesoría experta para asegurar el bienestar y la felicidad de cada mascota en tu hogar.</p>
-                    </div>
-                </div>
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-3">Agenda una cita con nuestro equipo veterinario</h2>
+              <p class="mb-0">Te esperamos con atención cercana y profesional. Reserva ahora y mantén a tu mascota protegida.</p>
             </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <a class="btn btn-light btn-lg" href="{% url 'Contacto' %}">Agendar ahora</a>
+            </div>
+          </div>
         </div>
     </section>
 
+    <section class="page-section">
+      <div class="container">
+        <h2 class="mb-4">Galería</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><img class="img-fluid rounded" src="{% static 'WebApp/img/Fondo.png' %}" alt="animal 1"></div>
+          <div class="col-6 col-md-3"><img class="img-fluid rounded" src="{% static 'WebApp/img/Fondo2.png' %}" alt="animal 2"></div>
+          <div class="col-6 col-md-3"><img class="img-fluid rounded" src="/media/servicios/alaska.jpg" alt="animal 3"></div>
+          <div class="col-6 col-md-3"><img class="img-fluid rounded" src="/media/servicios/golden1.jpg" alt="animal 4"></div>
+        </div>
+        <div class="text-end mt-3">
+          <a href="{% url 'Galeria' %}" class="btn btn-outline-primary">Ver más</a>
+        </div>
+      </div>
+    </section>
 
 {% endblock %}

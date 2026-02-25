@@ -8,3 +8,6 @@ def home(request):
 def tienda(request):
     return render(request, "WebApp/tienda.html")
 
+def galeria(request):
+    return render(request, "WebApp/galeria.html")
+

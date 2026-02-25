@@ -13,6 +13,7 @@ urlpatterns = [
 
  path('tienda/',views.tienda,name="Tienda"),
 
+ path('galeria/', views.galeria, name="Galeria"),
 
 ]
 
